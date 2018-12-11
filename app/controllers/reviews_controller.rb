@@ -3,16 +3,16 @@ class ReviewsController < ApplicationController
   def create
     @review = Review.new
     @review.body = params[:review][:body]
-    @review.product_id = params[:review][:product_id]
-    @product = Product.find(params[:id])
+    @product = Product.find(params[:product_id])
+    @review.product_id =  @product.id
+    @reviews = @product.reviews
 
     if @review.save
-      redirect_to "/products/#{@product.id}"
+      redirect_to product_path(@product)
     else
-      render :new
+      render 'products/show'
     end
   end
-
 
   def edit
     @review = Review.find(params[:id])

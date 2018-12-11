@@ -1,4 +1,4 @@
-<%= render 'product', this_product: @product  %>
+<%= render 'products/product', this_product: @product  %>
 <br/>
 <ul>
   <% @reviews.each do |review| %>
@@ -12,4 +12,4 @@
 
   <%= render 'reviews/review_form', review: @review %>
 
-  <%= link_to 'Edit',  edit_product_path %> |   <%= link_to("Delete", "/products/#{@product.id}", method: :delete, data: {confirm: "Are you sure you want to delete this?"})  %>
+  <%= link_to 'Edit',  edit_product_path(@product) %> |   <%= link_to("Delete", "/products/#{@product.id}", method: :delete, data: {confirm: "Are you sure you want to delete this?"})  %>
