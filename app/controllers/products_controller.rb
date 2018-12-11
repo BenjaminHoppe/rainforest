@@ -23,6 +23,7 @@ class ProductsController < ApplicationController
 
         if @product.save
             redirect_to "/products"
+            flash[:notice] = "Product was successfully created."
         else
             render :new
         end
@@ -41,7 +42,7 @@ class ProductsController < ApplicationController
 
         if @product.save
             redirect_to "/products/#{@product.id}"
-            flash[:notice] = "Product successfully updated."
+            flash[:notice] = "Product was successfully updated."
 
         else
             render :edit
@@ -52,5 +53,6 @@ class ProductsController < ApplicationController
         @product = Product.find(params[:id])
         @product.destroy
         redirect_to"/products"
+        flash[:notice] = "Product was successfully deleted."
     end
 end

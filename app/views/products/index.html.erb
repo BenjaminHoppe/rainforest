@@ -1,10 +1,12 @@
 <h2>Products: <%=@products.all.count%></h2>
-
+<% if flash[:notice] %>
+  <div class="notice"><%= flash[:notice] %></div>
+<% end %>
 <ul>
-    <% @products.each do |product| %>
-        <li>
-            <%= render 'product', this_product: product %>
-        </li>
+  <% @products.each do |product| %>
+    <li>
+      <%= render 'product', this_product: product %>
+    </li>
     <%end%>
 </ul>
 
