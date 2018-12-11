@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
-  resources :products
-  resources :reviews
 
+  get '/' => 'products#index'
+
+  resources :products do
+    resources :reviews
+  end
 end

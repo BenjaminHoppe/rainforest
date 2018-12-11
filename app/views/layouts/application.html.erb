@@ -8,16 +8,14 @@
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
      <style>
-  h1 {
-    text-align: center;
+  nav {
     display: inline-block;
   }
   </style>
   </head>
 
   <body>
-  <h1>Rainforest ● </h1>
-  <%= link_to 'All Products',  products_path %>
+ Rainforest | <nav> <%= link_to 'All Products',  products_path %></nav>
     <%= yield %>
   </body>
 </html>

@@ -41,6 +41,8 @@ class ProductsController < ApplicationController
 
         if @product.save
             redirect_to "/products/#{@product.id}"
+            flash[:notice] = "Product successfully updated."
+
         else
             render :edit
         end
