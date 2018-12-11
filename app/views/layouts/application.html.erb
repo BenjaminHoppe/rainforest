@@ -9,13 +9,15 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
      <style>
   h1 {
-    text-align: center
+    text-align: center;
+    display: inline-block;
   }
   </style>
   </head>
 
   <body>
-  <h1>Rainforest</h1>
+  <h1>Rainforest ● </h1>
+  <%= link_to 'All Products',  products_path %>
     <%= yield %>
   </body>
 </html>

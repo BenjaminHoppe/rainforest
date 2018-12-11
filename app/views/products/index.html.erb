@@ -3,7 +3,9 @@
 <ul>
     <% @products.each do |product| %>
         <li>
-            <%= render 'product', this_product: product  %>
+            <%= render 'product', this_product: product, link: false  %>
         </li>
     <%end%>
 </ul>
+
+<%= link_to 'Add Product',  new_product_path %>
