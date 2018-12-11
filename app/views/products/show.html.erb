@@ -1,1 +1,7 @@
 <%= render 'product', this_product: @product  %>
+<br/>
+<ul>
+  <% @reviews.each do |review| %>
+  <li><%= render 'reviews/review', review: review %></li>
+  <% end %>
+</ul>
