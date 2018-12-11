@@ -21,7 +21,7 @@ class ProductsController < ApplicationController
         @product.price = params[:product][:price]
 
         if @product.save
-            redirect_to "/products/#{@product.id}"
+            redirect_to "/products"
         else
             render :new
         end
