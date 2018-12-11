@@ -3,7 +3,7 @@
 <ul>
     <% @products.each do |product| %>
         <li>
-            <%= render 'product', this_product: product, link: false  %>
+            <%= render 'product', this_product: product %>
         </li>
     <%end%>
 </ul>
