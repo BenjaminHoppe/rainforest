@@ -21,15 +21,15 @@ class ReviewsController < ApplicationController
   end
 
   def update
+    @product = Product.find(params[:id])
     @review = Review.find(params[:id])
     @review.body = params[:review][:body]
-    @review.product_id = params[:review][:product_id]
-    @product = Product.find(params[:id])
+    @review.product_id = @product.id
 
     if @review.save
-      redirect_to "/products/#{@product.id}"
+      redirect_to product_path(@product)
     else
-      render :edit
+      render edit_product_review_path
     end
   end
 
