@@ -16,6 +16,8 @@ class ReviewsController < ApplicationController
 
   def edit
     @review = Review.find(params[:id])
+    @product = Product.find(params[:product_id])
+    @review.product = @product
   end
 
   def update
