@@ -1,4 +1,11 @@
 class ReviewsController < ApplicationController
+  before_action :load_review, only: [:show, :edit, :update, :destroy]
+  before_action :ensure_logged_in, except: [:show, :index]
+  before_action :ensure_user_owns_review, only: [:edit, :update, :destroy]
+
+  def load_review
+    @review = Review.find(params[:id])
+  end
 
   def create
     @review = Review.new
@@ -6,6 +13,8 @@ class ReviewsController < ApplicationController
     @product = Product.find(params[:product_id])
     @review.product_id =  @product.id
     @reviews = @product.reviews
+
+    @review.user_id = current_user.id
 
     if @review.save
       redirect_to product_path(@product)

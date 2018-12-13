@@ -1,5 +1,6 @@
 class ApplicationController < ActionController::Base
-
+    protect_from_forgery with: :exception
+    
     private
 
     def current_user
@@ -14,5 +15,12 @@ class ApplicationController < ActionController::Base
             redirect_to new_sessions_url
         end
     end
+
+    def ensure_user_owns_review
+        unless current_user == @review.user
+          flash[:alert] = "Please log in"
+          redirect_to new_sessions_url
+        end
+      end
 
 end
