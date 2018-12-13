@@ -4,18 +4,16 @@
     <title>Rainforest</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-     <style>
-  nav {
-    display: inline-block;
-  }
-  </style>
   </head>
 
   <body>
- Rainforest | <nav> <%= link_to 'All Products',  products_path %></nav>
-    <%= yield %>
+    <nav>  Rainforest | <%= link_to 'All Products',  products_path %> | <span class="userinfo"> <%if current_user%>Hello, <%=current_user.email%> | <%=link_to "Log out", sessions_path, :method => :delete %>
+    <%else%>
+    <%= link_to "Log in", new_sessions_path%> | <%=link_to "Sign up", new_users_path%><%end%></span></nav>
+    <main>
+      <%= yield %>
+    <main>
   </body>
 </html>

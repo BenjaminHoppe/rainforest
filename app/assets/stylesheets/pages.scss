@@ -1,0 +1,76 @@
+// Place all the styles related to the pages controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: rgb(44, 97, 44);
+    font-family: Arial, Helvetica, sans-serif
+}
+
+nav {
+    padding: 10px;
+    background-color: rgba(255, 255, 255, 0.322)
+}
+
+main {
+    margin: 30px;
+}
+
+h2 {
+    margin: 10px;
+    color: rgb(249, 136, 239);
+}
+
+h3 {
+    color: rgb(247, 215, 155);
+    margin-bottom: 10px;
+}
+
+h4 {
+    color: rgb(249, 136, 239);
+    margin-top: 50px;
+}
+
+p {
+    margin-bottom: 10px;
+}
+
+li {
+    list-style-type: none;
+}
+
+.card {
+    width: 50vw;
+    padding: 20px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    background-color: rgba(255, 255, 255, 0.322);
+}
+
+form {
+    width: 50vw;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.new_review {
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.322);
+}
+
+textarea {
+    width: 95%;
+    height: 100px;
+    padding: 10px;
+}
+
+.notice, label, a, p {
+    color: white;
+}
